@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="init_bill_value" format="integer" type="integer">0</item>
+    <item name="init_diners_value" format="integer" type="integer">1</item>
+    <item name="init_tipPercent_value" format="integer" type="integer">10</item>
+</resources>

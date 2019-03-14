@@ -40,7 +40,8 @@ public class CustomEditTextDialogFragment extends DialogFragment {
         super.onAttach(activity);
         try {
             if (getTargetFragment() != null) {
-                listener = (Listener) getTargetFragment();
+
+                listener = (Listener) getFragmentManager().findFragmentById(R.id.tipFragment);
             } else {
                 listener = (Listener) activity;
             }
