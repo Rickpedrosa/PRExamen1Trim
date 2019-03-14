@@ -17,4 +17,5 @@
     <string name="init_value_bill">0</string>
     <string name="main_save">Save</string>
     <string name="lista">lista</string>
+    <string name="valueFormatted">%1$.2f</string>
 </resources>

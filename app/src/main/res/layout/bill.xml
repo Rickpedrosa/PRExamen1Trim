@@ -1,154 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <TextView
-        android:id="@+id/lblBill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="12dp"
-        android:text="@string/lbl_bill"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txt_bill"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/gen_margin"
-        android:layout_marginEnd="@dimen/gen_margin"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:selectAllOnFocus="true"
-        android:textAlignment="textEnd"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lblBill"
-        tools:ignore="Autofill" />
+    <data>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gen_margin"
-        android:layout_marginEnd="@dimen/gen_margin"
-        android:drawableEnd="@drawable/ic_euro_symbol_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblBill" />
+    </data>
 
-    <TextView
-        android:id="@+id/lbl_diners"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gen_margin"
-        android:layout_marginEnd="@dimen/gen_margin"
-        android:text="@string/lbl_tip"
-        app:layout_constraintEnd_toEndOf="@+id/txt_tipercent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_bill" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/txt_tipercent"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:textAlignment="textEnd"
-        android:inputType="number"
-        android:selectAllOnFocus="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_diners" />
+        <TextView
+            android:id="@+id/lblBill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/lbl_bill"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/gen_margin"
-        android:text="@string/lbl_percent"
-        app:layout_constraintStart_toEndOf="@+id/txt_tipercent"
-        app:layout_constraintTop_toTopOf="@+id/txt_tipercent" />
+        <EditText
+            android:id="@+id/txt_bill"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:layout_marginEnd="@dimen/gen_margin"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblBill"
+            tools:ignore="Autofill" />
 
-    <TextView
-        android:id="@+id/lbl_per_diner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gen_margin"
-        android:layout_marginEnd="@dimen/gen_margin"
-        android:text="@string/lbl_tip_no_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:layout_marginEnd="@dimen/gen_margin"
+            android:drawableEnd="@drawable/ic_euro_symbol_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblBill" />
 
-    <TextView
-        android:id="@+id/icon_for_lbl_perdiner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="@dimen/gen_margin"
-        android:drawableEnd="@drawable/ic_euro_symbol_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_per_diner" />
+        <TextView
+            android:id="@+id/lbl_diners"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:layout_marginEnd="@dimen/gen_margin"
+            android:text="@string/lbl_tip"
+            app:layout_constraintEnd_toEndOf="@+id/txt_tipercent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_bill" />
 
-    <EditText
-        android:id="@+id/txt_tip"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/gen_margin"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="4dp"
-        android:ems="10"
-        android:textAlignment="textEnd"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/icon_for_lbl_perdiner"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_per_diner" />
+        <EditText
+            android:id="@+id/txt_tipercent"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:selectAllOnFocus="true"
+            android:textAlignment="textEnd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_diners" />
 
-    <TextView
-        android:id="@+id/lbl_rounded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/gen_margin"
-        android:layout_marginTop="@dimen/gen_margin"
-        android:text="@string/total_lbl"
-        app:layout_constraintStart_toEndOf="@+id/txt_total"
-        app:layout_constraintTop_toBottomOf="@+id/txt_tip" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gen_margin"
+            android:text="@string/lbl_percent"
+            app:layout_constraintStart_toEndOf="@+id/txt_tipercent"
+            app:layout_constraintTop_toTopOf="@+id/txt_tipercent" />
 
-    <TextView
-        android:id="@+id/icon_for_lbl_rounded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:drawableEnd="@drawable/ic_euro_symbol_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_rounded" />
+        <TextView
+            android:id="@+id/lbl_per_diner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:layout_marginEnd="@dimen/gen_margin"
+            android:text="@string/lbl_tip_no_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <EditText
-        android:id="@+id/txt_total"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:textAlignment="textEnd"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/icon_for_lbl_rounded"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_tipercent" />
+        <TextView
+            android:id="@+id/icon_for_lbl_perdiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/gen_margin"
+            android:drawableEnd="@drawable/ic_euro_symbol_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_per_diner" />
 
-    <Button
-        android:id="@+id/btn_reset_bill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gen_margin"
-        android:layout_marginEnd="@dimen/gen_margin"
-        android:text="@string/string_btn_reset"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_total" />
+        <EditText
+            android:id="@+id/txt_tip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gen_margin"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="numberDecimal"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toStartOf="@+id/icon_for_lbl_perdiner"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_per_diner" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/lbl_rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/gen_margin"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:text="@string/total_lbl"
+            app:layout_constraintStart_toEndOf="@+id/txt_total"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tip" />
+
+        <TextView
+            android:id="@+id/icon_for_lbl_rounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:drawableEnd="@drawable/ic_euro_symbol_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_rounded" />
+
+        <EditText
+            android:id="@+id/txt_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="numberDecimal"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toStartOf="@+id/icon_for_lbl_rounded"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tipercent" />
+
+        <Button
+            android:id="@+id/btn_reset_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gen_margin"
+            android:layout_marginEnd="@dimen/gen_margin"
+            android:text="@string/string_btn_reset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_total" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
