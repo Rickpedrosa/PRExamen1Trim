@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">PRExamen1Trim</string>
+    <string name="custom_layout_dialog_title">Restaurant</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="lbl_bill">Bill</string>
+    <string name="lbl_tip">Tip %</string>
+    <string name="lbl_percent">%</string>
+    <string name="lbl_tip_no_icon">Tip</string>
+    <string name="total_lbl">Total</string>
+    <string name="lbl_diners">Diners</string>
+    <string name="lbl_perdiner">Per diner</string>
+    <string name="lbl_rounded">Rounded</string>
+    <string name="string_btn_reset">Reset</string>
+    <string name="init_value_diners">1</string>
+    <string name="init_value_tip_percent">10</string>
+    <string name="init_value_bill">0</string>
+    <string name="main_save">Save</string>
+    <string name="lista">lista</string>
+</resources>
