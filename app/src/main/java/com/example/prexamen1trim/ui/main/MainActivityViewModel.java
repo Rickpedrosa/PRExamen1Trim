@@ -1,7 +1,11 @@
 package com.example.prexamen1trim.ui.main;
 
 import com.example.prexamen1trim.data.Database;
+import com.example.prexamen1trim.data.model.Restaurant;
 
+import java.util.List;
+
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MainActivityViewModel extends ViewModel {
@@ -10,7 +14,6 @@ public class MainActivityViewModel extends ViewModel {
     private float billValue;
     private int tipPercent;
     private int diners;
-    private String restaurant;
 
     public MainActivityViewModel(Database database) {
         this.database = database;
@@ -56,11 +59,11 @@ public class MainActivityViewModel extends ViewModel {
         return calculateBillPerDiner() != 0 ? (int) (calculateBillPerDiner() + 1) : 0;
     }
 
-    public String getRestaurant() {
-        return restaurant;
+    public void addRestaurant(Restaurant restaurant) {
+        database.addRestaurant(restaurant);
     }
 
-    public void setRestaurant(String restaurant) {
-        this.restaurant = restaurant;
+    public LiveData<List<Restaurant>> getRestaurantsLiveData() {
+        return database.getRestaurantLiveData();
     }
 }

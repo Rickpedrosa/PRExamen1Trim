@@ -18,4 +18,6 @@
     <string name="main_save">Save</string>
     <string name="lista">lista</string>
     <string name="floatAmountFormat">%1$.2f</string>
+    <string name="hint_restaurant">Restaurant...</string>
+    <string name="no_restaurants_added_yet">No restaurants added yet</string>
 </resources>

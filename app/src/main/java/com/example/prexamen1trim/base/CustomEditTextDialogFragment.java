@@ -2,7 +2,6 @@ package com.example.prexamen1trim.base;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
@@ -35,19 +34,7 @@ public class CustomEditTextDialogFragment extends DialogFragment {
         return b.create();
     }
 
-    @Override
-    public void onAttach(@NonNull Context activity) {
-        super.onAttach(activity);
-        try {
-            if (getTargetFragment() != null) {
-
-                listener = (Listener) getFragmentManager().findFragmentById(R.id.tipFragment);
-            } else {
-                listener = (Listener) activity;
-            }
-        } catch (ClassCastException e) {
-            throw new ClassCastException(
-                    "Listener must implement CustomLayoutDialogFragment.Listener");
-        }
+    public void setListener(Listener listener) {
+        this.listener = listener;
     }
 }

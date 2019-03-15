@@ -16,10 +16,14 @@ import android.widget.Toast;
 import com.example.prexamen1trim.R;
 import com.example.prexamen1trim.base.CustomEditTextDialogFragment;
 import com.example.prexamen1trim.data.Database;
+import com.example.prexamen1trim.data.model.Restaurant;
 import com.example.prexamen1trim.databinding.FragmentTipBinding;
 import com.example.prexamen1trim.ui.main.MainActivityViewModel;
 import com.example.prexamen1trim.ui.main.MainActivityViewModelFactory;
 import com.example.prexamen1trim.utils.ValueUtils;
+
+import java.util.Date;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,12 +80,17 @@ public class TipFragment extends Fragment implements CustomEditTextDialogFragmen
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.mnuSave) {
-            if (getAccessToRestaurantDialog()) {
-                CustomEditTextDialogFragment dialog = new CustomEditTextDialogFragment();
-                dialog.show(getFragmentManager(), TipFragment.class.getSimpleName());
-            }
-            return true;
+        switch (item.getItemId()) {
+            case R.id.mnuSave:
+                if (getAccessToRestaurantDialog()) {
+                    CustomEditTextDialogFragment dialog = new CustomEditTextDialogFragment();
+                    dialog.setListener(this);
+                    dialog.show(requireActivity().getSupportFragmentManager(), "LOL");
+                }
+                return true;
+            case R.id.mnuList:
+                navController.navigate(R.id.restaurantsFragment2);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -185,16 +194,22 @@ public class TipFragment extends Fragment implements CustomEditTextDialogFragmen
     }
 
     private boolean getAccessToRestaurantDialog() {
-        return !TextUtils.isEmpty(b.bill.txtTipercent.getText().toString()) &&
-                !TextUtils.isEmpty(b.diners.txtDiners.getText().toString()) &&
-                !TextUtils.isEmpty(b.bill.txtBill.getText().toString());
+        return !TextUtils.equals(b.bill.txtBill.getText().toString(),
+                String.valueOf(0.0f));
     }
-
 
     @Override
     public void onOkayClick(DialogFragment dialog) {
-//        EditText editText = dialog.getView().findViewById(R.id.txtDialogRestaurant);
-//        Toast.makeText(requireContext(), editText.getText().toString(), Toast.LENGTH_LONG).show();
+        EditText editText = Objects.requireNonNull(dialog.getDialog()).findViewById(R.id.txtDialogRestaurant);
+        if (!TextUtils.isEmpty(editText.getText().toString())) {
+            String date = ValueUtils.getDateCurrentTimeZone(new Date().getTime());
+            Restaurant restaurant = new Restaurant(date, editText.getText().toString(), viewModel.getBillValue(),
+                    viewModel.getTipPercent(), viewModel.getDiners());
+
+            viewModel.addRestaurant(restaurant);
+            Toast.makeText(requireContext(), "Restaurant added!", Toast.LENGTH_SHORT).show();
+            initDefaultValues();
+        }
     }
 
     @Override
